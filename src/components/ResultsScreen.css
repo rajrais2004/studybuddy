@@ -1,0 +1,197 @@
+/* ResultsScreen.css */
+
+.results-screen {
+  max-width: 640px;
+  margin: 0 auto;
+  padding: var(--space-2xl) var(--space-md);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2xl);
+  animation: fadeInUp 0.5s ease;
+}
+
+/* Score section */
+.results-screen__score-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-md);
+}
+
+.results-screen__score-circle {
+  position: relative;
+  width: 160px;
+  height: 160px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.results-screen__score-ring {
+  position: absolute;
+  inset: 0;
+  transform: rotate(-90deg);
+}
+
+.results-screen__score-ring-fill {
+  transition: stroke-dashoffset 1.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.results-screen__score-circle--excellent { color: var(--color-success); }
+.results-screen__score-circle--good { color: var(--color-primary); }
+.results-screen__score-circle--fair { color: var(--color-warning); }
+.results-screen__score-circle--needs-work { color: var(--color-error); }
+
+.results-screen__score-value {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  z-index: 1;
+}
+
+.results-screen__score-emoji {
+  font-size: 1.5rem;
+  margin-bottom: 2px;
+}
+
+.results-screen__score-number {
+  font-size: var(--font-size-3xl);
+  font-weight: 800;
+  line-height: 1;
+}
+
+.results-screen__score-fraction {
+  font-size: var(--font-size-xs);
+  color: var(--color-text-secondary);
+  margin-top: 2px;
+}
+
+.results-screen__score-message {
+  font-size: var(--font-size-lg);
+  font-weight: 600;
+  color: var(--color-text-secondary);
+}
+
+/* Missed questions */
+.results-screen__missed {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
+}
+
+.results-screen__missed-title {
+  font-size: var(--font-size-lg);
+  font-weight: 700;
+  color: var(--color-text);
+}
+
+.results-screen__missed-list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
+}
+
+.results-screen__missed-item {
+  background: var(--color-bg-secondary);
+  border: 1.5px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  padding: var(--space-md);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
+}
+
+.results-screen__missed-question {
+  font-weight: 600;
+  line-height: 1.4;
+  display: flex;
+  gap: var(--space-sm);
+}
+
+.results-screen__missed-number {
+  color: var(--color-primary);
+  font-weight: 700;
+  flex-shrink: 0;
+}
+
+.results-screen__missed-answers {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-xs);
+  font-size: var(--font-size-sm);
+}
+
+.results-screen__missed-wrong {
+  color: var(--color-error);
+}
+
+.results-screen__missed-correct {
+  color: var(--color-success);
+}
+
+.results-screen__missed-label {
+  font-weight: 600;
+  margin-right: var(--space-xs);
+}
+
+.results-screen__missed-explanation {
+  font-size: var(--font-size-sm);
+  color: var(--color-text-secondary);
+  line-height: 1.5;
+  padding: var(--space-sm);
+  background: var(--color-bg-tertiary);
+  border-radius: var(--radius-sm);
+}
+
+/* Action buttons */
+.results-screen__actions {
+  display: flex;
+  gap: var(--space-md);
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.results-screen__retake-btn {
+  padding: var(--space-md) var(--space-xl);
+  font-size: var(--font-size-base);
+  font-weight: 600;
+  color: var(--color-text-on-primary);
+  background: linear-gradient(135deg, var(--color-primary), var(--color-primary-dark));
+  border-radius: var(--radius-md);
+  transition: all var(--transition-fast);
+  box-shadow: var(--shadow-md);
+}
+
+.results-screen__retake-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-lg), var(--shadow-glow);
+}
+
+.results-screen__start-over-btn {
+  padding: var(--space-md) var(--space-xl);
+  font-size: var(--font-size-base);
+  font-weight: 600;
+  color: var(--color-text-secondary);
+  background: var(--color-bg-secondary);
+  border: 1.5px solid var(--color-border);
+  border-radius: var(--radius-md);
+  transition: all var(--transition-fast);
+}
+
+.results-screen__start-over-btn:hover {
+  border-color: var(--color-primary);
+  color: var(--color-primary);
+  transform: translateY(-1px);
+}
+
+@media (max-width: 480px) {
+  .results-screen__actions {
+    flex-direction: column;
+  }
+
+  .results-screen__retake-btn,
+  .results-screen__start-over-btn {
+    width: 100%;
+    text-align: center;
+  }
+}

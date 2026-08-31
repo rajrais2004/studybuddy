@@ -1,0 +1,93 @@
+/* LoadingState.css */
+
+.loading-state {
+  max-width: 480px;
+  margin: var(--space-3xl) auto;
+  padding: 0 var(--space-md);
+  animation: fadeIn 0.4s ease;
+}
+
+.loading-state__card {
+  background: var(--color-bg-secondary);
+  border: 1.5px solid var(--color-border);
+  border-radius: var(--radius-xl);
+  padding: var(--space-2xl) var(--space-xl);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: var(--space-md);
+  box-shadow: var(--shadow-lg), var(--shadow-glow);
+}
+
+.loading-state__spinner-outer {
+  position: relative;
+  width: 72px;
+  height: 72px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.loading-state__spinner {
+  position: absolute;
+  inset: 0;
+  border: 3.5px solid var(--color-bg-tertiary);
+  border-top-color: var(--color-primary);
+  border-right-color: var(--color-primary-light);
+  border-radius: 50%;
+  animation: spin 1s cubic-bezier(0.68, -0.55, 0.27, 1.55) infinite;
+}
+
+.loading-state__sparkle {
+  font-size: 1.6rem;
+  animation: pulse 1.5s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { transform: scale(0.9); opacity: 0.8; }
+  50% { transform: scale(1.15); opacity: 1; }
+}
+
+.loading-state__title {
+  font-size: var(--font-size-xl);
+  font-weight: 700;
+  color: var(--color-text);
+}
+
+.loading-state__status {
+  font-size: var(--font-size-sm);
+  color: var(--color-text-secondary);
+  max-width: 340px;
+  line-height: 1.5;
+  min-height: 42px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.loading-state__timer {
+  font-size: var(--font-size-xs);
+  font-weight: 600;
+  color: var(--color-text-tertiary);
+  background: var(--color-bg-tertiary);
+  padding: 4px 12px;
+  border-radius: var(--radius-full);
+}
+
+.loading-state__cancel-btn {
+  margin-top: var(--space-sm);
+  padding: var(--space-sm) var(--space-md);
+  font-size: var(--font-size-xs);
+  font-weight: 600;
+  color: var(--color-text-secondary);
+  background: transparent;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  transition: all var(--transition-fast);
+}
+
+.loading-state__cancel-btn:hover {
+  border-color: var(--color-error);
+  color: var(--color-error);
+}

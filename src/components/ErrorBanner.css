@@ -1,0 +1,82 @@
+/* ErrorBanner.css */
+
+.error-banner {
+  max-width: 680px;
+  margin: var(--space-md) auto;
+  padding: var(--space-sm) var(--space-md);
+  background: var(--color-error-light);
+  border: 1.5px solid var(--color-error);
+  border-radius: var(--radius-md);
+  color: var(--color-error);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-md);
+  animation: slideDown 0.3s ease;
+  box-shadow: var(--shadow-sm);
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.error-banner__content {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+  font-size: var(--font-size-sm);
+  font-weight: 500;
+  line-height: 1.4;
+}
+
+.error-banner__icon {
+  font-size: 1.2rem;
+  flex-shrink: 0;
+}
+
+.error-banner__message {
+  margin: 0;
+}
+
+.error-banner__actions {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+  flex-shrink: 0;
+}
+
+.error-banner__retry-btn {
+  padding: 4px var(--space-sm);
+  font-size: var(--font-size-xs);
+  font-weight: 600;
+  color: #fff;
+  background: var(--color-error);
+  border-radius: var(--radius-sm);
+  transition: opacity var(--transition-fast);
+}
+
+.error-banner__retry-btn:hover {
+  opacity: 0.9;
+}
+
+.error-banner__dismiss-btn {
+  background: transparent;
+  color: var(--color-error);
+  font-size: 1.1rem;
+  font-weight: bold;
+  padding: 0 4px;
+  line-height: 1;
+  opacity: 0.7;
+  transition: opacity var(--transition-fast);
+}
+
+.error-banner__dismiss-btn:hover {
+  opacity: 1;
+}
