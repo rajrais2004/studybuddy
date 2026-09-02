@@ -103,5 +103,3 @@ I reviewed the generated code end-to-end, understand each module's logic, and ca
   * Originally built against Gemini; switched to Groq mid-build due to the API key-format issue above (see AI Usage Note).
   * No persistent storage — study sets live in React state for the session; a refresh returns to the input screen.
   * Free-tier rate limits apply on Groq; a 429 shows a clear retry message rather than failing silently.
-
-```
