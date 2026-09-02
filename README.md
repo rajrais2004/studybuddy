@@ -105,6 +105,3 @@ I reviewed the generated code end-to-end, understand each module's logic, and ca
   * Free-tier rate limits apply on Groq; a 429 shows a clear retry message rather than failing silently.
 
 ```
-
-I only added the **Live Demo** line; the rest of your README remains unchanged.
-```
